@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index,follow">
+    <title>Privacy Policy — inn</title>
+    <style>
+      :root { color-scheme: light; font-family: Inter, Arial, sans-serif; color: #222; background: #f6f5f1; }
+      body { margin: 0; line-height: 1.65; }
+      main { box-sizing: border-box; max-width: 820px; margin: 0 auto; padding: 40px 24px 72px; background: #fff; }
+      h1, h2 { line-height: 1.25; color: #20231f; }
+      h1 { margin: 0 0 12px; font-size: 2rem; }
+      h2 { margin: 36px 0 10px; font-size: 1.3rem; }
+      p, li { font-size: 1rem; }
+      .meta { color: #595d57; }
+      .notice { padding: 14px 16px; border-left: 4px solid #a94b31; background: #fff2ec; }
+      a { color: #135d54; }
+      @media (max-width: 600px) { main { padding: 28px 18px 48px; } h1 { font-size: 1.7rem; } }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Privacy Policy — inn</h1>
+      <p class="meta"><strong>App:</strong> inn<br>
+        <strong>Android package:</strong> com.g7ecosystem.customer<br>
+        <strong>Last reviewed:</strong> 27 September 2026<br>
+        <strong>Operator:</strong> OWNER INPUT REQUIRED — enter the exact legal entity shown in Google Play Console.<br>
+        <strong>Privacy contact:</strong> OWNER INPUT REQUIRED — enter a monitored privacy email address or other working contact channel.</p>
+      <p class="notice"><strong>Release completion required:</strong> the operator and contact fields must be completed before this policy is used for a Google Play submission.</p>
+
+      <h2>Introduction</h2>
+      <p>inn helps customers discover local restaurants, gyms, brands and supplement products, save places, place orders with participating shops, and follow community posts. This policy explains what information the inn Customer app uses, where it is sent, who receives it, and what controls are currently available. It applies to the Android package above and the corresponding Customer app on other platforms.</p>
+
+      <h2>Information we collect</h2>
+      <p>When you use the app, information may be sent to Firebase, Google Maps Platform, Google Places, or the shop you choose. The app does not include an advertising SDK, Firebase Analytics, Firebase Crashlytics, or Firebase Performance Monitoring in the reviewed Customer dependency set.</p>
+
+      <h2>Account information and authentication</h2>
+      <p>Firebase Authentication and inn account records process your Firebase account ID, display name, email address when supplied by your sign-in method, authentication provider information, and profile details. Profile details can include a contact phone number, verified phone number, gender selection, interests, and a profile photo URL supplied by a sign-in provider. Your Firebase account ID is also used to protect and associate your account data.</p>
+      <p>You can create or access an account using the enabled email/password or Google sign-in flows. Firebase handles authentication credentials; the app does not store your password in its customer profile document. Phone verification is used when a verified phone number is needed for ordering. The production provider setup reviewed on 24 September 2026 did not list Apple Sign-In as enabled. An Apple sign-in code path exists in the app, but Apple should be treated as unavailable unless the operator enables and verifies it for a release.</p>
+
+      <h2>Addresses and location</h2>
+      <p>You may enter and save a delivery address. Address details can include an area, street, building, floor, apartment, landmark, delivery note, label, and an optional map pin with latitude and longitude. You may delete saved addresses individually. You can also enter a delivery area manually; a saved address or precise pin is not needed for pickup.</p>
+      <p>If you grant foreground location permission and choose a location feature, the app can read your current location to sort nearby places or position a map. The current-location value used for nearby sorting is held in app memory by that feature. When map features are used, location and map requests are sent to Google Maps Platform. Google Maps Platform states that it receives information including search terms, IP addresses, and latitude/longitude coordinates, and may use and retain it to provide and improve Google products and services. See <a href="https://cloud.google.com/maps-platform/terms">Google Maps Platform Terms</a> and <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.</p>
+      <p>When you save a delivery address or place a delivery order, the selected address and any selected pin are stored with the address or order. A delivery order sends the necessary destination information to the shop selected for fulfillment. Location permission is foreground-only; the Customer app does not request background location.</p>
+
+      <h2>Orders and delivery information</h2>
+      <p>If you place an order, inn and the selected shop process the shop, order items, quantities, prices and totals, order status, and the name and verified phone number needed to fulfill it. Delivery orders may also include the chosen delivery destination and notes. Pickup orders do not need a delivery address. Order records include a cash-on-delivery payment-method value; the Customer app does not collect card numbers, bank account details, or online payment credentials. Payment is arranged directly with the selected shop.</p>
+      <p>Orders are stored in Firebase/Cloud Firestore. The selected shop can read the order information needed to prepare and fulfill that order. You can view your order history in the app, but there is no customer-facing order deletion control.</p>
+
+      <h2>Community and user-generated content</h2>
+      <p>Customers can browse and follow communities. The app only permits accounts approved as community contributors to submit posts. A submitted post can contain text and up to six photos. The post stores the author's account ID and display-name snapshot. It does not include the author's email or phone number in the post content.</p>
+      <p>Posts are stored in Cloud Firestore and submitted images in Cloud Storage. Published posts can be seen by community users. Published image objects use publicly readable URLs, so anyone who has a published image URL may be able to access that image outside the app. Do not upload private or sensitive images. Community content can remain available until it is removed through moderation; the app does not currently provide a full account-deletion process.</p>
+      <p>The Customer app has no direct-message, chat, comment, reply, or user-blocking feature in the reviewed implementation. Contributors should review their post before submitting it.</p>
+
+      <h2>Notifications and device identifiers</h2>
+      <p>If you enable notifications, Firebase Cloud Messaging provides a device token. The app stores that token with an installation identifier, platform, and language under your account so Firebase can route order, community, and service announcements to the correct device. The app attempts to remove the device registration when you disable notifications or sign out. That cleanup is best-effort.</p>
+      <p>The Android Google Maps SDK also generates a Maps SDK-specific pseudonymous identifier and automatically sends request/device metadata, IP address, crash metrics, and (when map camera APIs are used) map interaction events such as panning and zooming. Google says it uses these data to maintain and improve its services. These SDK data are separate from Firebase Analytics or Crashlytics, neither of which is included in the reviewed Customer dependencies.</p>
+
+      <h2>Search and places</h2>
+      <p>Marketplace search text is sent to an authenticated Cloud Function to retrieve matching places and products. The Customer app does not save a search history. The function logs result count, query length, and request duration; it does not log the raw marketplace query in its normal success log.</p>
+      <p>When you search for an address or place, the typed query and a Places session token are sent to a Customer Cloud Function, which sends the query to Google Places. The app does not save the typed address-search history. Google Maps Platform's terms say it may receive and retain search terms, IP addresses, and coordinates to provide and improve its services; Google's retention period for a particular request is not set by inn.</p>
+
+      <h2>Photos, files and other data</h2>
+      <p>The reviewed Customer app lets approved community contributors upload photos. It does not provide a general document, video, or audio upload feature. Product and merchant images are viewed by the app and are not uploaded by the customer.</p>
+      <p>The app does not intentionally collect a user's contacts, calendar, installed-app list, health records, fitness activity, or browsing history. It does not provide health tracking, medical advice, diagnosis, or treatment.</p>
+
+      <h2>How information is used</h2>
+      <ul>
+        <li>Create, authenticate, secure, and manage your account.</li>
+        <li>Show your profile and saved preferences.</li>
+        <li>Find nearby places and display maps when you choose those features.</li>
+        <li>Search the marketplace and resolve address/place suggestions.</li>
+        <li>Create, display, and fulfill orders.</li>
+        <li>Store and show saved addresses and favorites.</li>
+        <li>Publish and moderate community posts.</li>
+        <li>Deliver notifications you enable.</li>
+        <li>Maintain, secure, and troubleshoot the app and its backend services.</li>
+      </ul>
+
+      <h2>Service providers and processors</h2>
+      <p>The Customer app uses Firebase Authentication, Cloud Firestore, Cloud Functions, Cloud Storage, and Firebase Cloud Messaging. Google operates those services for authentication, hosting, app functionality, and message delivery. Google Sign-In is used as an authentication provider. Google Maps Platform and Google Places provide maps, map data, and place search; their terms also describe Google's own use and retention of Maps Platform request data to provide and improve Google services. The app uses Google Fonts for typography, which may make font requests to Google's font service.</p>
+      <p>These providers may process information under their own terms and privacy notices. A shop is a recipient of information for an order you submit to it, not a Firebase processor. Community content is shown to other users as described above.</p>
+
+      <h2>Data sharing</h2>
+      <ul>
+        <li><strong>The shop you select:</strong> order items and totals, your name and verified phone number, and, for delivery, the destination and delivery notes, so the shop can fulfill your order.</li>
+        <li><strong>Community users:</strong> the text, photos, and display-name snapshot you submit to a community.</li>
+        <li><strong>Google and Firebase services:</strong> authentication, storage, backend processing, messaging, maps, places, and related service operation. Google Maps Platform may use and retain Maps/Places request data to provide and improve Google services.</li>
+        <li><strong>Authorities or other parties where legally required:</strong> to comply with applicable law or protect rights and safety.</li>
+      </ul>
+      <p>The Customer app has no advertising SDK and does not use customer information to target third-party ads. This does not mean that information is never shared; the recipients and transfers above are part of the service.</p>
+
+      <h2>Data security</h2>
+      <p>The app and its Firebase and Google service connections use HTTPS/TLS for data in transit. Firestore and Storage security rules restrict access to account records and service operations. Published community image URLs are publicly readable as described above. No system can be guaranteed completely secure, and the app does not provide end-to-end encryption.</p>
+
+      <h2>Data retention</h2>
+      <p>Account, address, favorites, notification, order, and community records are stored in Firebase services. The reviewed code does not define an automatic expiry period for these records. You can remove saved addresses and favorites individually and disable notifications; order records have no customer deletion control. Community posts may be removed through moderation. Device-registration removal on sign-out or notification disable is best-effort.</p>
+      <p>The operator has not documented a complete retention schedule for account, order, community, or service logs in the reviewed repository. Google Maps Platform separately states that it may use and retain Maps Platform request data under its terms and privacy policy. Specific provider retention periods vary by service and are not represented here as a single duration.</p>
+
+      <h2>Account and data deletion</h2>
+      <p>The current Customer app does not provide an in-app account deletion method or a complete backend process to delete Firebase Authentication and associated customer data. Signing out does not delete an account. This is a release blocker for Google Play because the app allows account creation.</p>
+      <p><strong>OWNER INPUT REQUIRED:</strong> configure and publish a working privacy contact or web request form. The operator must also implement an in-app deletion path and backend deletion/retention process before representing account deletion as available. Any records retained for a legitimate legal or operational reason must be identified and explained in the completed policy.</p>
+
+      <h2>Children and age policy</h2>
+      <p>inn is not designed or marketed for children under 13. The reviewed app does not ask for a date of birth or perform an age screen. If you believe a child under 13 has provided personal information, contact the operator using the completed privacy contact below so the request can be reviewed.</p>
+
+      <h2>International processing</h2>
+      <p>Customer Cloud Functions are deployed in the me-west1 region. The repository does not establish the production Firestore or Cloud Storage data locations. Google and Firebase services may process information in other countries; the exact location depends on the service configuration and provider. Google Maps Platform request data is handled under Google's Maps Platform terms.</p>
+
+      <h2>Your choices and rights</h2>
+      <p>You can edit supported profile fields, remove saved addresses and favorites, opt out of notifications, and deny or revoke location permission in your device settings. You may exercise any access, correction, deletion, objection, or other rights available under laws that apply to you by contacting the operator.</p>
+      <p><strong>OWNER INPUT REQUIRED:</strong> replace the contact placeholder below with a monitored channel before using this policy for release. There is currently no verified contact channel in the Customer app configuration.</p>
+
+      <h2>Changes to this policy</h2>
+      <p>The operator may update this policy when the app or its data practices change. The “Last reviewed” date above will be updated when the policy changes. Material changes should also be communicated through the app or another appropriate channel.</p>
+
+      <h2>Contact and privacy inquiries</h2>
+      <p><strong>Developer/operator legal name:</strong> OWNER INPUT REQUIRED — enter the exact Google Play developer entity.<br>
+        <strong>Privacy contact:</strong> OWNER INPUT REQUIRED — enter a monitored privacy email address or other working contact channel.<br>
+        <strong>App:</strong> inn<br>
+        <strong>Android package:</strong> com.g7ecosystem.customer</p>
+    </main>
+  </body>
+</html>
