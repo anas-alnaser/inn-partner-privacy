@@ -14,7 +14,6 @@
       h2 { margin: 36px 0 10px; font-size: 1.3rem; }
       p, li { font-size: 1rem; }
       .meta { color: #595d57; }
-      .notice { padding: 14px 16px; border-left: 4px solid #a94b31; background: #fff2ec; }
       a { color: #135d54; }
       @media (max-width: 600px) { main { padding: 28px 18px 48px; } h1 { font-size: 1.7rem; } }
     </style>
@@ -24,10 +23,9 @@
       <h1>Privacy Policy — inn</h1>
       <p class="meta"><strong>App:</strong> inn<br>
         <strong>Android package:</strong> com.g7ecosystem.customer<br>
-        <strong>Last reviewed:</strong> 27 September 2026<br>
-        <strong>Operator:</strong> OWNER INPUT REQUIRED — enter the exact legal entity shown in Google Play Console.<br>
-        <strong>Privacy contact:</strong> OWNER INPUT REQUIRED — enter a monitored privacy email address or other working contact channel.</p>
-      <p class="notice"><strong>Release completion required:</strong> the operator and contact fields must be completed before this policy is used for a Google Play submission.</p>
+        <strong>Last reviewed:</strong> 3 October 2026<br>
+        <strong>Operator:</strong> Anas Alnaser<br>
+        <strong>Privacy contact:</strong> <a href="mailto:anasalnaser24@gmail.com">anasalnaser24@gmail.com</a></p>
 
       <h2>Introduction</h2>
       <p>inn helps customers discover local restaurants, gyms, brands and supplement products, save places, place orders with participating shops, and follow community posts. This policy explains what information the inn Customer app uses, where it is sent, who receives it, and what controls are currently available. It applies to the Android package above and the corresponding Customer app on other platforms.</p>
@@ -36,8 +34,11 @@
       <p>When you use the app, information may be sent to Firebase, Google Maps Platform, Google Places, or the shop you choose. The app does not include an advertising SDK, Firebase Analytics, Firebase Crashlytics, or Firebase Performance Monitoring in the reviewed Customer dependency set.</p>
 
       <h2>Account information and authentication</h2>
-      <p>Firebase Authentication and inn account records process your Firebase account ID, display name, email address when supplied by your sign-in method, authentication provider information, and profile details. Profile details can include a contact phone number, verified phone number, gender selection, interests, and a profile photo URL supplied by a sign-in provider. Your Firebase account ID is also used to protect and associate your account data.</p>
+      <p>Firebase Authentication and inn account records process your Firebase account ID, display name, email address when supplied by your sign-in method, authentication provider information, and profile details. Profile details can include a contact phone number, verified phone number, gender selection, an optional date of birth, interests, and a profile photo URL supplied by a sign-in provider. Your Firebase account ID is also used to protect and associate your account data.</p>
       <p>You can create or access an account using the enabled email/password or Google sign-in flows. Firebase handles authentication credentials; the app does not store your password in its customer profile document. Phone verification is used when a verified phone number is needed for ordering. The production provider setup reviewed on 24 September 2026 did not list Apple Sign-In as enabled. An Apple sign-in code path exists in the app, but Apple should be treated as unavailable unless the operator enables and verifies it for a release.</p>
+
+      <h3>Date of birth (optional)</h3>
+      <p>In Account → Edit profile you may choose to add a date of birth, and you may remove it at any time. It is optional: you do not need it to sign up or use inn. It is stored as a calendar date (year, month, day) in your private Customer profile, only for managing your account. inn does not use it to verify your age, and does not show it to shops, community users, or other customers. It is not used for marketing, advertising, or personalization, and it is not included in orders or community posts. Only your own signed-in account can read it through the app.</p>
 
       <h2>Addresses and location</h2>
       <p>You may enter and save a delivery address. Address details can include an area, street, building, floor, apartment, landmark, delivery note, label, and an optional map pin with latitude and longitude. You may delete saved addresses individually. You can also enter a delivery area manually; a saved address or precise pin is not needed for pickup.</p>
@@ -46,12 +47,12 @@
 
       <h2>Orders and delivery information</h2>
       <p>If you place an order, inn and the selected shop process the shop, order items, quantities, prices and totals, order status, and the name and verified phone number needed to fulfill it. Delivery orders may also include the chosen delivery destination and notes. Pickup orders do not need a delivery address. Order records include a cash-on-delivery payment-method value; the Customer app does not collect card numbers, bank account details, or online payment credentials. Payment is arranged directly with the selected shop.</p>
-      <p>Orders are stored in Firebase/Cloud Firestore. The selected shop can read the order information needed to prepare and fulfill that order. You can view your order history in the app, but there is no customer-facing order deletion control.</p>
+      <p>Orders are stored in Firebase/Cloud Firestore. The selected shop can read the order information needed to prepare and fulfill that order. You can view your order history in the app, but there is no customer-facing control to delete a single order. If you delete your account, completed, rejected and cancelled orders remain with the shop in the limited form described under “Account and data deletion”.</p>
 
       <h2>Community and user-generated content</h2>
       <p>Customers can browse and follow communities. The app only permits accounts approved as community contributors to submit posts. A submitted post can contain text and up to six photos. The post stores the author's account ID and display-name snapshot. It does not include the author's email or phone number in the post content.</p>
-      <p>Posts are stored in Cloud Firestore and submitted images in Cloud Storage. Published posts can be seen by community users. Published image objects use publicly readable URLs, so anyone who has a published image URL may be able to access that image outside the app. Do not upload private or sensitive images. Community content can remain available until it is removed through moderation; the app does not currently provide a full account-deletion process.</p>
-      <p>The Customer app has no direct-message, chat, comment, reply, or user-blocking feature in the reviewed implementation. Contributors should review their post before submitting it.</p>
+      <p>Posts are stored in Cloud Firestore and submitted images in Cloud Storage. Published posts can be seen by community users. Published image objects use publicly readable URLs, so anyone who has a published image URL may be able to access that image outside the app. Do not upload private or sensitive images. Community content remains available until it is removed through moderation or its author deletes their account.</p>
+      <p>Before posting, contributors must accept the community contributor terms; the acceptance and its date are stored with the account. Any Customer can report a post or its author. A report stores the reporter's account ID (never shown to the author or to other users), the reason and optional details, and is reviewed by the inn team. Any Customer can block an author; the block list is private to that Customer. The Customer app has no direct-message, chat, comment or reply feature.</p>
 
       <h2>Notifications and device identifiers</h2>
       <p>If you enable notifications, Firebase Cloud Messaging provides a device token. The app stores that token with an installation identifier, platform, and language under your account so Firebase can route order, community, and service announcements to the correct device. The app attempts to remove the device registration when you disable notifications or sign out. That cleanup is best-effort.</p>
@@ -68,7 +69,7 @@
       <h2>How information is used</h2>
       <ul>
         <li>Create, authenticate, secure, and manage your account.</li>
-        <li>Show your profile and saved preferences.</li>
+        <li>Show your profile and saved preferences, including a date of birth if you add one.</li>
         <li>Find nearby places and display maps when you choose those features.</li>
         <li>Search the marketplace and resolve address/place suggestions.</li>
         <li>Create, display, and fulfill orders.</li>
@@ -95,29 +96,30 @@
       <p>The app and its Firebase and Google service connections use HTTPS/TLS for data in transit. Firestore and Storage security rules restrict access to account records and service operations. Published community image URLs are publicly readable as described above. No system can be guaranteed completely secure, and the app does not provide end-to-end encryption.</p>
 
       <h2>Data retention</h2>
-      <p>Account, address, favorites, notification, order, and community records are stored in Firebase services. The reviewed code does not define an automatic expiry period for these records. You can remove saved addresses and favorites individually and disable notifications; order records have no customer deletion control. Community posts may be removed through moderation. Device-registration removal on sign-out or notification disable is best-effort.</p>
-      <p>The operator has not documented a complete retention schedule for account, order, community, or service logs in the reviewed repository. Google Maps Platform separately states that it may use and retain Maps Platform request data under its terms and privacy policy. Specific provider retention periods vary by service and are not represented here as a single duration.</p>
+      <p>Account, address, favorites, notification, order, and community records are stored in Firebase services until you delete them, delete your account, or they are removed through moderation. Place-search counters used to prevent abuse expire after two days where the operator has enabled automatic expiry. Device-registration removal on sign-out or notification disable is best-effort.</p>
+      <p>The operator has not documented a complete retention schedule for account, order, community, or service logs. Google Maps Platform separately states that it may use and retain Maps Platform request data under its terms and privacy policy. Specific provider retention periods vary by service and are not represented here as a single duration.</p>
 
       <h2>Account and data deletion</h2>
-      <p>The current Customer app does not provide an in-app account deletion method or a complete backend process to delete Firebase Authentication and associated customer data. Signing out does not delete an account. This is a release blocker for Google Play because the app allows account creation.</p>
-      <p><strong>OWNER INPUT REQUIRED:</strong> configure and publish a working privacy contact or web request form. The operator must also implement an in-app deletion path and backend deletion/retention process before representing account deletion as available. Any records retained for a legitimate legal or operational reason must be identified and explained in the completed policy.</p>
+      <p>You can delete your account in the app (Account → Delete account) or on the web at <a href="https://g7-eco-prod-108310.web.app/account-deletion/">https://g7-eco-prod-108310.web.app/account-deletion/</a> by signing in with the same method you use in the app. For your security you may be asked to sign in again first. If an order is still in progress, you can delete your account after it is completed or cancelled.</p>
+      <p>Deletion is permanent and happens when you confirm. We delete your sign-in account, profile (including your date of birth, if you added one — the whole profile record is deleted), saved addresses, favorites, notifications and device registrations, community memberships and contributor access, blocked-author list, and the community posts and photos you published. We keep completed, rejected and cancelled orders as the shop's sales record — the items, prices, status and dates — after removing your name, phone number, account ID, order and item notes, delivery address, and any cancellation or rejection text. We keep a record that an account was deleted and when, identified only by a one-way hash of the account ID. Reports you filed are kept for moderation without your identity or the details you typed. Operational logs may contain your account ID for up to 30 days.</p>
+      <p>No fixed retention period has been set for the retained order records and the deletion record described above. We remove the identifying fields and personal text listed above, but the remaining items, prices, dates and status are not anonymous: the shop that received an order may still be able to recognise it. If you can no longer sign in, contact the privacy contact below to request deletion.</p>
+      <p>You can also remove only your date of birth without deleting your account: in Account → Edit profile choose “Remove birthday”. This removes the field from your profile.</p>
 
       <h2>Children and age policy</h2>
-      <p>inn is not designed or marketed for children under 13. The reviewed app does not ask for a date of birth or perform an age screen. If you believe a child under 13 has provided personal information, contact the operator using the completed privacy contact below so the request can be reviewed.</p>
+      <p>inn is not designed or marketed for children under 13. The app does not require a date of birth and does not use the optional date of birth to verify age or screen users by age. If you believe a child under 13 has provided personal information, contact the operator using the completed privacy contact below so the request can be reviewed.</p>
 
       <h2>International processing</h2>
       <p>Customer Cloud Functions are deployed in the me-west1 region. The repository does not establish the production Firestore or Cloud Storage data locations. Google and Firebase services may process information in other countries; the exact location depends on the service configuration and provider. Google Maps Platform request data is handled under Google's Maps Platform terms.</p>
 
       <h2>Your choices and rights</h2>
-      <p>You can edit supported profile fields, remove saved addresses and favorites, opt out of notifications, and deny or revoke location permission in your device settings. You may exercise any access, correction, deletion, objection, or other rights available under laws that apply to you by contacting the operator.</p>
-      <p><strong>OWNER INPUT REQUIRED:</strong> replace the contact placeholder below with a monitored channel before using this policy for release. There is currently no verified contact channel in the Customer app configuration.</p>
+      <p>You can edit supported profile fields, add or remove your optional date of birth, remove saved addresses and favorites, opt out of notifications, and deny or revoke location permission in your device settings. You may exercise any access, correction, deletion, objection, or other rights available under laws that apply to you by contacting the operator.</p>
 
       <h2>Changes to this policy</h2>
       <p>The operator may update this policy when the app or its data practices change. The “Last reviewed” date above will be updated when the policy changes. Material changes should also be communicated through the app or another appropriate channel.</p>
 
       <h2>Contact and privacy inquiries</h2>
-      <p><strong>Developer/operator legal name:</strong> OWNER INPUT REQUIRED — enter the exact Google Play developer entity.<br>
-        <strong>Privacy contact:</strong> OWNER INPUT REQUIRED — enter a monitored privacy email address or other working contact channel.<br>
+      <p><strong>Developer/operator legal name:</strong> Anas Alnaser<br>
+        <strong>Privacy contact:</strong> <a href="mailto:anasalnaser24@gmail.com">anasalnaser24@gmail.com</a><br>
         <strong>App:</strong> inn<br>
         <strong>Android package:</strong> com.g7ecosystem.customer</p>
     </main>
